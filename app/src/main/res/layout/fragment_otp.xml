@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.LoginFragment"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/otp_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:srcCompat="@drawable/otp_screen_image"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/raleway_regular"
+        android:text="Enter OTP"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/raleway_regular"
+        android:text="We have sent you an OTP \n for phone number verification"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:id="@+id/otpET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/text_input_bg"
+        android:ems="10"
+        android:fontFamily="@font/raleway_regular"
+        android:hint="Enter OTP"
+        android:inputType="phone"
+        android:padding="8dp"
+        />
+
+    <Button
+        android:id="@+id/verifyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/primary_btn_bg"
+        android:fontFamily="@font/raleway_regular"
+        android:textStyle="bold"
+        android:text="Verify OTP"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light" />
+
+
+
+</LinearLayout>

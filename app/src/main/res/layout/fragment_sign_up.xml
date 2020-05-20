@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.SignUpFragment"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/login_screen_image" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/raleway_regular"
+        android:text="Create Your Account"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/raleway_regular"
+        android:text="Please fill the detials to create an account."
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/text_input_bg"
+        android:fontFamily="@font/raleway_regular"
+        android:hint="Enter Your Full Nmae"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_person_light_grey_24dp"
+        android:drawablePadding="5dp"
+        android:padding="8dp"/>
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/text_input_bg"
+        android:fontFamily="@font/raleway_regular"
+        android:hint="Enter Your Email Address"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_email_light_grey_24dp"
+        android:drawablePadding="5dp"
+        />
+    <EditText
+        android:id="@+id/phoneNumberET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/text_input_bg"
+        android:ems="10"
+        android:fontFamily="@font/raleway_regular"
+        android:hint="Enter Your Phone Number"
+        android:inputType="phone"
+        android:padding="8dp"
+        android:drawableStart="@drawable/ic_phone_light_grey_24dp"
+        android:drawablePadding="5dp"/>
+
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/primary_btn_bg"
+        android:fontFamily="@font/raleway_regular"
+        android:textStyle="bold"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_regular"
+        android:text="Already have an account ?"
+        android:textAlignment="center"
+        />
+        <TextView
+            android:id="@+id/loginTV"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_regular"
+            android:text="Login in Now"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

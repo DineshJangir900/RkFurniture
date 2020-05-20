@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EntryFragment"
+    android:orientation="vertical"
+    android:background="@color/cardview_shadow_start_color"
+    android:gravity="center|bottom">
+
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/primary_btn_bg"
+        android:fontFamily="@font/raleway_regular"
+        android:textStyle="bold"
+        android:text="Log in using mobile number"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"/>
+
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/primary_btn_bg"
+        android:fontFamily="@font/raleway_regular"
+        android:textStyle="bold"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:layout_marginBottom="100dp"/>
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "657769970805",
+    "firebase_url": "https://rk-furniture.firebaseio.com",
+    "project_id": "rk-furniture",
+    "storage_bucket": "rk-furniture.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657769970805:android:2a85137db60e55450d0c3c",
+        "android_client_info": {
+          "package_name": "com.example.rkfurniture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657769970805-gc7hq7q3lia1ii87lk1hcan6tom3vj8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVkM8AgRabwuRStsGddKlvBdW-FwzWyvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657769970805-gc7hq7q3lia1ii87lk1hcan6tom3vj8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
