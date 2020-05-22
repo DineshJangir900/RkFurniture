@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "657769970805-7gthsugbio9gdrhv2917usrlmot2cghf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rkfurniture",
+            "certificate_hash": "663d743e9e764181cedd04884a981c507a42c8e8"
+          }
+        },
+        {
           "client_id": "657769970805-gc7hq7q3lia1ii87lk1hcan6tom3vj8m.apps.googleusercontent.com",
           "client_type": 3
         }

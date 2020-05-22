@@ -20,6 +20,7 @@ import com.example.rkfurniture.fragments.OtpFragment;
 import com.example.rkfurniture.fragments.SignUpFragment;
 import com.example.rkfurniture.fragments.SplashFragment;
 import com.example.rkfurniture.interfaces.LoginValidatorListner;
+import com.example.rkfurniture.interfaces.OtpValidatorListner;
 import com.example.rkfurniture.models.UserModel;
 import com.example.rkfurniture.utility.Constants;
 import com.example.rkfurniture.utility.CustomProgressDialog;
@@ -58,6 +59,7 @@ public class SplashScreenActivity extends AppCompatActivity implements LoginVali
     private Editor mEditor;
     private DatabaseReference demoRef;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
+    private OtpValidatorListner mCallback;
 
     String mVerificationId;
     @Override
@@ -76,17 +78,19 @@ public class SplashScreenActivity extends AppCompatActivity implements LoginVali
 
         loadFragment(new SplashFragment());
 
+
     }
 
     //method to Load any Fragment
     private void loadFragment(Fragment fragment){
         FragmentTransaction transactionManger = getSupportFragmentManager().beginTransaction();
-        transactionManger.replace(R.id.frameContainer,fragment).commitAllowingStateLoss();
+        transactionManger.replace(R.id.frameContainer,fragment).commit();
     }
 
     //Implemented Method to check for User Credentials
     @Override
     public void checkUserCredentials(String phone) {
+        Log.e("phone",""+phone);
         sendVerificationCode(phone);
 
 
@@ -95,26 +99,26 @@ public class SplashScreenActivity extends AppCompatActivity implements LoginVali
     @Override
     public void signUpNewUser(String email, String phone, String name) {
 
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        demoRef = RkFurnitureApplication.getFirebaseDBInstance().child("usersData").child(phone);
-        demoRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                UserModel userModel = new UserModel();
-                userModel.setUserName(name);
-                userModel.setUserEmail(email);
-                userModel.setUserPhone(phone);
-                userModel.setUserUid(userId);
-                userModel.setUserProfileImageURL("image");
-                demoRef.setValue(userModel);
+//      //  String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//        demoRef = RkFurnitureApplication.getFirebaseDBInstance().child("usersData").child(phone);
+//        demoRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                UserModel userModel = new UserModel();
+//                userModel.setUserName(name);
+//                userModel.setUserEmail(email);
+//                userModel.setUserPhone(phone);
+//                userModel.setUserUid(userId);
+//                userModel.setUserProfileImageURL("image");
+//                demoRef.setValue(userModel);
+//
+//            }
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e("firebaseError",""+databaseError);
-            }
-        });
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Log.e("firebaseError",""+databaseError);
+//            }
+//        });
 
     }
 
@@ -177,14 +181,17 @@ public class SplashScreenActivity extends AppCompatActivity implements LoginVali
                 TaskExecutors.MAIN_THREAD,
                 mCallbacks);
     }
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
+            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
         @Override
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-
             String code = phoneAuthCredential.getSmsCode();
+            loadFragment(new OtpFragment());
+
             if (code != null) {
-                loadFragment(new OtpFragment());
-                verifyVerificationCode(code);
+                mCallback.otpVerification(mVerificationId,code);
+            //    verifyVerificationCode(code);
             }
         }
 
@@ -199,7 +206,10 @@ public class SplashScreenActivity extends AppCompatActivity implements LoginVali
 
             //storing the verification id that is sent to the user
             mVerificationId = s;
+            mResendToken = forceResendingToken;
         }
+
+
     };
 
 
